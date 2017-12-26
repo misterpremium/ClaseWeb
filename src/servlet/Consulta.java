@@ -26,8 +26,6 @@ public class Consulta extends HttpServlet {
 
     }
 
-
-
 	
 		 public void init() throws ServletException
 		  {
