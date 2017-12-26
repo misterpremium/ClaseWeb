@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		PrintWriter out = response.getWriter();
 		
-		out.println("<p>Bienbenido "+ username+"</p>");
+		out.println("<p>Bienvenido "+ username+"</p>");
 		System.out.println("Succes");
 		
 	}

@@ -14,7 +14,7 @@ import javax.servlet.http.*;
 	
 public class CreateUser extends HttpServlet {
 
-	private static final long serialVersionUID = 2L;
+	private static final long serialVersionUID = 1L;
 	/*public void doGet(HttpServletRequest request,
             HttpServletResponse response)//RESPONSE Y REQUEST SE PUEDE SUSTITUIR POR CUALQUIER COSA
     throws ServletException, IOException
@@ -34,23 +34,25 @@ public class CreateUser extends HttpServlet {
 response.setContentType("text/html");
 
 PrintWriter out = response.getWriter();
+out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
 
 String username =  request.getParameter("username");
 String password = request.getParameter("password");
 String password2 = request.getParameter("password2");
+System.out.println("Inicio metodo post");
 if (password.equals(password2)){
 	
 	System.out.println("las contraseñas son iguales");
-	out.println("<p> Se ha creado correctamente el usuario "+username+" </p>");
+	out.println("<p> Se ha creado correctamente el usuario "+ username +" </p>");
 }
 else {
 	
 	out.println("<p> Las contraseñas son diferentes. </p>");
-	out.println("<a href =\"/ClaseWeb/docs/join.jsp\"> Reintenttar </a>");
+	out.println("<a type=\"button\" class=\"btn btn-warning\"  href=\"/ClaseWeb/docs/join.jsp\">Reintentar</a>");
+	
 	System.out.println("Las contraseñas no coinciden");
 }
-out.println("<p> Se ha creado correctamente el usuario "+username+" </p>");
-
+System.out.println("Fin metodo post");
 
 }
 

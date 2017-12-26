@@ -8,7 +8,7 @@
 </head>
 <body>
 <p>Introducir nombre de usuarioa</p>
-<form action="/ClaseWeb/CreateUser" method="get">
+<form action="/ClaseWeb/CreateUser" method="post">
 <input type="text" name="username" />
 <p>Introducir una contraseña</p>
 <input type="password" name="password" />
