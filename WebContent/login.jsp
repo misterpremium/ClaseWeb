@@ -17,12 +17,14 @@
 </form>
 
 
+
+
 <% String variable = request.getParameter("username"); %>
 <% String variable2 = request.getParameter("password"); %>
 
 
 
 
-
+<a href="/ClaseWeb/CreateUser">Create new user</a>
 </body>
 </html>

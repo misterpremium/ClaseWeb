@@ -6,6 +6,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+
+import lib.ConnectSQL;
 //import java.sql.SQLException;
 //import java.lang.Throwable;
 //import java.sql.*;
@@ -25,9 +27,14 @@ public class CreateUser extends HttpServlet {
 		String password = request.getParameter("password");
 		String password2 = request.getParameter("password2");
 		PrintWriter out = response.getWriter();
-		out.println("<p> Las contraseñas son diferentes. </p>");
+		out.println("<p> Las contraseï¿½as son diferentes. </p>");
 
 }*/
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 {
 	//	doGet(request, response);
@@ -42,21 +49,67 @@ String password2 = request.getParameter("password2");
 System.out.println("Inicio metodo post");
 if (password.equals(password2)){
 	
-	System.out.println("las contraseñas son iguales");
+	System.out.println("las contraseï¿½as son iguales");
 	out.println("<p> Se ha creado correctamente el usuario "+ username +" </p>");
+
+	
+	/*
+	String ok;
+	response.setContentType("text/html");
+	String DBname = request.getParameter("users");
+	ok = ConnectSQL.Connect(DBname);
+	out.println("<h1>" + ok + "</h1>");
+	out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\">");
+	out.println("<a href=\"http://25.91.187.37:8080/SitioWebFinal/\">Volver al inicio</a>");
+	*/
+	
+	
+	
 }
 else {
 	
-	out.println("<p> Las contraseñas son diferentes. </p>");
+	out.println("<p> Las contraseï¿½as son diferentes. </p>");
 	out.println("<a type=\"button\" class=\"btn btn-warning\"  href=\"/ClaseWeb/docs/join.jsp\">Reintentar</a>");
 	
-	System.out.println("Las contraseñas no coinciden");
+	System.out.println("Las contraseï¿½as no coinciden");
 }
-System.out.println("Fin metodo post");
 
 }
+////
+
+
+
+	
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////
+	
+	
+
+
+
 
 	public static void main(String[] args) {
 
 			}
 }
+
+
